@@ -26,3 +26,20 @@ npm run build
 ````
 npm run preview
 ````
+
+## Publicar en github
+````
+git init
+ojo con el .gitignore
+git add.
+git commit -m "Firts commit"
+git branch -M main
+git branch(para ver como se llama la raiz ej. main, master)
+````
+
+## Desplegar en netlify usando la CLI
+````
+npm i -g netlify-cli
+netlify login
+netlify init
+````
