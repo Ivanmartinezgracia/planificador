@@ -1,15 +1,24 @@
-import dayjs from "dayjs"
+import './style.css'
+import { formatearFecha } from './utils'
+import confetti from 'canvas-confetti'
 
-const boton=document.getElementById("Añadir")
-const input =document.getElementById("texto")
-const lista=document.getElementById("lista")
-boton.addEventListener("click",guardarPlan)
+const boton = document.getElementById('Añadir')
+const input = document.getElementById('texto')
+const lista = document.getElementById('lista')
+boton.addEventListener('click', guardarPlan)
 
-function guardarPlan(){
-    
-    const fechaHoy=dayjs().format("DD/MM/YYYY HH:mm")
-    const li = document.createElement("li")
-    li.textContent = input.value+ " - " + fechaHoy
+function guardarPlan() {
+  if (input.value.trim() !== '') {
+    const fechaHoy = formatearFecha(new Date())
+    const li = document.createElement('li')
+    li.textContent = input.value + ' - ' + fechaHoy
     lista.appendChild(li)
-    input.value = ""
+    input.value = ''
+    confetti({
+      particleCount: 300,
+      spread: 70,
+      origin: { y: 0.6 },
+    })
+    input.value = ''
+  }
 }
