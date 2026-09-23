@@ -15,3 +15,15 @@ button {
   cursor: pointer;
   background-color: rgb(113, 152, 238);
 }
+.formulario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.texto {
+  flex: 1;
+}
+.min {
+  flex: 0 0 10%;
+}
